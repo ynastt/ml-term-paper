@@ -1,0 +1,70 @@
+.container {
+    padding: 15px;
+}
+
+.map-image {
+    max-width: 100%;
+    height: auto;
+    border: 20px solid white;
+    margin-bottom: 25px;
+    border-radius: 25px;
+}
+
+.jumbotron {
+    padding: 20px;
+    background-size: cover;
+    color: white;
+    position: sticky;
+}
+
+body {
+    /* Padding bottom by footer height */
+    padding-bottom: 80px;
+    background-color: #e6f0ff;
+}
+
+.intro {
+    background-color: white;
+    text-align: center;
+    height: auto;
+    border: 20px solid white;
+    margin: 20px;
+    border-radius: 25px;
+}
+
+#prediction {
+    background-color: white;
+    text-align: center;
+    height: auto;
+    border: 20px solid white;
+    margin: 20px;
+    border-radius: 25px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.button {
+    background-color: #686d83;
+    text-align: center;
+    color: white;
+    font-weight: bold
+}
+
+#result {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+#vidMap {
+    max-width: 100%;
+    border: 20px solid white;
+    margin-bottom: 25px;
+    border-radius: 25px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}

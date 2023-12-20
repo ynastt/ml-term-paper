@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- to run front end in terminal: python3 -m http.server 3001-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tornadoes</title>
+
+  <!-- Script to fetch form data and populate in index.html-->
+  <script type="text/JavaScript">
+    const test = async(lengId, widId, fatId, placeId) => {
+      let formData = new FormData()
+      var lengValue = document.getElementById(lengId).value;
+      var widValue = document.getElementById(widId).value;
+      var fatValue = document.getElementById(fatId).value;
+      var placeValue = document.getElementById(placeId).value;
+      formData.append('leng', lengValue)
+      formData.append('wid', widValue)
+      formData.append('fat', fatValue)
+      formData.append('place', placeValue)
+      let response = await fetch("http://localhost:5000/predict", { 
+        method: 'POST' ,
+        body: formData
+    })
+      let data = await response.json()
+      console.log(data)
+      
+      document.getElementById('demos').innerHTML="Your Tornado EF Category Results are: " +  Object.values(data);
+    }
+  </script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <!-- Custom css -->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+
+<!--jumbotron-->
+  <div class="row">
+    <div class="col-md-12 jumbotron text-center" style="background-color:#686d83">
+      <div class="container">
+        <h1><strong>Tornadoes Predictions</strong></h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container for main body-->
+  <div class="container">
+
+    <!-- FORM SECTION FOR PREDICTION -->
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <div id="prediction">
+          <h2>EF Predictor</h2>
+          <p><strong>Enter values in the field below and click to
+          see the strength of the tornado
+          </strong>
+          </p>
+          <div class="form">
+            <form>
+              <section>
+                <p></p>
+                  <label>Enter length (miles)</label>
+                  <input class="leng" name="leng" id="leng">
+              </section>
+              <section>
+                <p></p>
+                  <label>Enter width (yards)</label>
+                  <input class="wid" name="wid" id="wid">
+              </section>
+              <section>
+                <p></p>
+                  <label>Enter number of fatalities</label>
+                  <input class="fat" name="fat" id="fat">
+              </section>
+              <section>
+                <p></p>
+                  <label>Enter town, state (example: Texas, Kansas)</label>
+                  <input class="place" name="place" id="place">
+              </section>
+                <p></p>
+              <input id="submit" type="button" onclick="test('leng','wid','fat','place')" value="Predict EF Category" class="button"/>
+              <p></p>
+            </form>
+          
+          <!--Display results of predictor-->
+            <div id='result'>
+              <div id='demos'></div>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- VIDEO MAP SECTION -->
+    <div class="row">
+
+      <!-- frequency map video -->
+      <div class="col-md-12 col-centered">
+        <div id="vidMap">
+          <div id="4ed6e6eb-39c5-4041-ad24-0f44ca68cd90" 
+            class="plotly-graph-div" style="height:600px; width:100%;">
+          </div>
+        </div>
+      </div>
+ 
+    <!--row end-->
+    </div>
+
+  <!--container end-->
+  </div>
+
+
+  <!-- D3 JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!--frequency map javascript-->
+  <script type="text/javascript" src="static/js/map.js"></script>
+
+</body>
+</html>
