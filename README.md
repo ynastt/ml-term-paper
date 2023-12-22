@@ -10,7 +10,7 @@ https://github.com/ynastt/ml-term-paper/assets/86785664/144a5472-9841-42a0-a840-
 ## Analysis
 ![Снимок экрана 2023-12-22 170319](https://github.com/ynastt/ml-term-paper/assets/86785664/0447aa3d-a0de-43f4-8dd4-f37f44a2e3cf)
 
-![Снимок экрана 2023-12-22 170319](https://github.com/ynastt/ml-term-paper/assets/86785664/9b0f5300-8257-44a0-9bbc-d322233b843f)
+![Снимок экрана 2023-12-22 170312](https://github.com/ynastt/ml-term-paper/assets/86785664/69671fd2-9412-4826-b14a-1d7b7f6339c1)
 
 ![Снимок экрана 2023-12-22 175732](https://github.com/ynastt/ml-term-paper/assets/86785664/e377dfb9-afda-475c-9139-0e7d3a675c60)
 
