@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- to run front end in terminal: python3 -m http.server 3001-->
+<!-- to run frontend in terminal: python3 -m http.server 3001-->
 
 <head>
   <meta charset="UTF-8">
@@ -28,7 +28,7 @@
       let data = await response.json()
       console.log(data)
       
-      document.getElementById('demos').innerHTML="Your Tornado EF Category Results are: " +  Object.values(data);
+      document.getElementById('efres').innerHTML="Predicted EF Category: " +  Object.values(data);
     }
   </script>
 
@@ -58,9 +58,6 @@
       <div class="col-sm-12 text-center">
         <div id="prediction">
           <h2>EF Predictor</h2>
-          <p><strong>Enter values in the field below and click to
-          see the strength of the tornado
-          </strong>
           </p>
           <div class="form">
             <form>
@@ -81,17 +78,70 @@
               </section>
               <section>
                 <p></p>
-                  <label>Enter town, state (example: Texas, Kansas)</label>
-                  <input class="place" name="place" id="place">
+                  <label>Choose state (example: Texas, Kansas)</label>
+                  <!-- <input class="place" name="place" id="place"> -->
+                  <select class="place" name="place" id="place">
+                    <option value=""></option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="California">California</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Connecticut">Connecticut</option>
+                    <option value="Delaware">Delaware</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Kansas">Kansas</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Maine">Maine</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Massachusetts">Massachusetts</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="Minnesota">Minnesota</option>
+                    <option value="Mississippi">Mississippi</option>
+                    <option value="Missouri">Missouri</option>
+                    <option value="Montana">Montana</option>
+                    <option value="Nebraska">Nebraska</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="New Hampshire">New Hampshire</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New Mexico">New Mexico</option>
+                    <option value="New York">New York</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="North Dakota">North Dakota</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="Rhode Island">Rhode Island</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="South Dakota">South Dakota</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont">Vermont</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virginia">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+
+                  </select>
               </section>
                 <p></p>
-              <input id="submit" type="button" onclick="test('leng','wid','fat','place')" value="Predict EF Category" class="button"/>
+              <input id="submit" type="button" onclick="test('leng','wid','fat','place')" value="Predict EF" class="button"/>
               <p></p>
             </form>
           
           <!--Display results of predictor-->
             <div id='result'>
-              <div id='demos'></div>
+              <div id='efres'></div>
             </div>
           </div>
 
@@ -103,10 +153,19 @@
     <!-- VIDEO MAP SECTION -->
     <div class="row">
 
-      <!-- frequency map video -->
-      <div class="col-md-12 col-centered">
+      <!-- frequency 1950-2019 map video -->
+      <!-- <div class="col-md-12 col-centered">
         <div id="vidMap">
           <div id="4ed6e6eb-39c5-4041-ad24-0f44ca68cd90" 
+            class="plotly-graph-div" style="height:600px; width:100%;">
+          </div>
+        </div>
+      </div> -->
+
+      <!-- frequency 1950-2022 map video -->
+      <div class="col-md-12 col-centered">
+        <div id="vidMap">
+          <div id="09909af8-414a-4e5a-abd9-49c467e61150" 
             class="plotly-graph-div" style="height:600px; width:100%;">
           </div>
         </div>
@@ -118,13 +177,9 @@
   <!--container end-->
   </div>
 
-
-  <!-- D3 JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-
   <!--frequency map javascript-->
-  <script type="text/javascript" src="static/js/map.js"></script>
+  <!-- <script type="text/javascript" src="static/js/map2019.js"></script> -->
+  <script type="text/javascript" src="static/js/map2022.js"></script>
 
 </body>
 </html>
