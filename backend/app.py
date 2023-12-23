@@ -8,7 +8,6 @@ from sklearn.preprocessing import MinMaxScaler
 # Для геокодирования и получения широты и долготы населенного пункта или города
 from geopy.geocoders import Nominatim
 
-
 # Настройка Flask
 app = Flask(__name__)
 # Добавляем поддержку CORS (Cross-Origin Resource Sharing) для обработки AJAX-запросов
@@ -80,17 +79,17 @@ def predict():
         # Rename output to user friendly text
         category = ""
         if(output[0] == 0):
-            category = "EF 0 - Light damage"  # Легкое повреждение
+            category = "EF 0 - Light damage"
         elif(output[0] == 1):
-            category = "EF 1 - Moderate damage" # Умеренное повреждение
+            category = "EF 1 - Moderate damage"
         elif(output[0] == 2):
-            category = "EF 2 - Considerable damage" # Значительное повреждение
+            category = "EF 2 - Considerable damage"
         elif(output[0] == 3):
-            category = "EF 3 - Severe damage" # Тяжелые повреждения
+            category = "EF 3 - Severe damage"
         elif(output[0] == 4):
-            category = "EF 4 - Devastating damage" # Разрушительные повреждения
+            category = "EF 4 - Devastating damage"
         elif(output[0] == 5):
-            category = "EF 5 - Incredible damage" # Невероятные повреждения
+            category = "EF 5 - Incredible damage"
         # category = "test"
         print(category)
         return { "classify": category }
