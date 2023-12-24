@@ -1,5 +1,4 @@
 # Term Paper on numerical methods
-Analysis of the tornado occurrences in the U. S. since 1950, ML model to predict tornado category (EF scale).
 
 ## UI
 ![Снимок экрана 2023-12-22 173350](https://github.com/ynastt/ml-term-paper/assets/86785664/9f581ffd-dfbc-478e-916b-9acf743487fc)
